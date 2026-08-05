@@ -379,6 +379,7 @@ html[data-mode="focus"] .ph-view.v-focus{display:block;}
 /* founder */
 .founder{display:grid;grid-template-columns:320px 1fr;gap:var(--s4);align-items:center;}
 @media(max-width:820px){.founder{grid-template-columns:1fr;}}
+.founder picture{display:block;}
 .founder img{border-radius:var(--radius);width:100%;height:auto;}
 blockquote{margin:0 0 var(--s3);font-size:clamp(1.25rem,2.3vw,1.55rem);line-height:1.4;letter-spacing:-0.02em;}
 .founder p{color:var(--muted);}
@@ -729,8 +730,14 @@ footer{border-top:1px solid var(--hairline);padding:var(--s4) 0;font-size:.875re
 <!-- FOUNDER -->
 <section class="band" id="founder">
   <div class="wrap"><div class="inner founder">
-    <img src="/angela-chloe.jpg" width="680" height="850" loading="lazy" decoding="async"
-         alt="Angela Kocek, founder of Dune Seven, holding her daughter Chloe">
+    <picture>
+      <source type="image/webp" media="(min-width:821px)" srcset="/angela-chloe-640.webp">
+      <img src="/angela-chloe-1024.jpg"
+           srcset="/angela-chloe-1024.jpg 1024w, /angela-chloe-1600.jpg 1600w"
+           sizes="(max-width:820px) 90vw, 320px"
+           width="680" height="850" loading="lazy" decoding="async"
+           alt="Angela Kocek, founder of Dune Seven, holding her daughter Chloe">
+    </picture>
     <div>
       <p class="eyebrow">Our story</p>
       <blockquote>"Less noise. More clarity. Plan for the energy you actually have."</blockquote>
