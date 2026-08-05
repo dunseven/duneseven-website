@@ -1,0 +1,92 @@
+<!-- ============================================================
+     Dune Seven — Our Story section
+     Assets live at: /assets/images/story/
+     ============================================================ -->
+
+<section class="ds-story" id="story">
+  <div class="ds-story__inner">
+
+    <figure class="ds-story__figure">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="/assets/images/story/angela-chloe-640.webp   640w,
+                  /assets/images/story/angela-chloe-1024.webp 1024w,
+                  /assets/images/story/angela-chloe-1600.webp 1600w"
+          sizes="(max-width: 767px) 100vw, 44vw">
+        <img
+          src="/assets/images/story/angela-chloe-1024.jpg"
+          srcset="/assets/images/story/angela-chloe-640.jpg   640w,
+                  /assets/images/story/angela-chloe-1024.jpg 1024w,
+                  /assets/images/story/angela-chloe-1600.jpg 1600w"
+          sizes="(max-width: 767px) 100vw, 44vw"
+          width="1600" height="2000"
+          loading="lazy" decoding="async"
+          alt="Angela, founder of Dune Seven, holding her daughter Chloe.">
+      </picture>
+    </figure>
+
+    <div class="ds-story__copy">
+      <h2 class="ds-story__title">Our story</h2>
+      <p>REPLACE — opening paragraph.</p>
+      <p>REPLACE — second paragraph.</p>
+      <p class="ds-story__sign">Angela</p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.ds-story {
+  background: #F5F1ED;
+  padding: 32px 24px;
+}
+.ds-story__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.ds-story__figure {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.ds-story__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.ds-story__title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #1C1C1C;
+  margin: 0 0 24px;
+}
+.ds-story__copy p {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #1C1C1C;
+  margin: 0 0 16px;
+}
+.ds-story__sign {
+  color: #7A7A7A;
+}
+
+@media (min-width: 768px) {
+  .ds-story { padding: 32px; }
+  .ds-story__inner {
+    grid-template-columns: 5fr 6fr;
+    gap: 32px;
+  }
+}
+</style>
