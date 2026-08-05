@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://duneseven.com.au/sitemap.xml
