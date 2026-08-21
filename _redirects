@@ -1,25 +1,2 @@
-# Dune Seven — redirects
-# Old coaching-site URLs land on the new homepage instead of a dead 404.
-#
-# NOTE: Netlify serves real files first (index.html, sitemap.xml, robots.txt),
-# so these rules only fire when nothing else matches. Your real pages are safe.
-
-# Real pages — must resolve before the catch-all below
-/privacy-policy     /privacy-policy.html     200
-
-# Known old paths from the previous site
-/m/*            /    301
-/login          /    301
-/m/login        /    301
-/about          /    301
-/about-us       /    301
-/contact        /    301
-/services       /    301
-/programs       /    301
-/coaching       /    301
-/shop           /    301
-/blog           /    301
-/blog/*         /    301
-
-# Catch-all — any other stale or unknown path goes to the homepage
-/*              /    301
+# Force non-www — matches the canonical tag. Fixes the split-authority issue.
+https://www.duneseven.com.au/*   https://duneseven.com.au/:splat   301!
