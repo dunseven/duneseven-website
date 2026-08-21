@@ -8,7 +8,7 @@
   --deep:#2A2521;
   --panel:#F3EFEA;
   --panel-line:#E0D8D0;
-  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --display:"EB Garamond",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -68,14 +68,14 @@ a{color:inherit}
 /* ---- type ---- */
 h1{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(3.5rem,11.2vw,10.5rem);
-  line-height:.94;letter-spacing:-.028em;margin:0;text-wrap:balance;
+  font-size:clamp(2.75rem,6.2vw,5.5rem);
+  line-height:1.06;letter-spacing:-.012em;margin:0;text-wrap:balance;
 }
 h1 em{font-style:italic;color:var(--muted)}
 h2{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(2.125rem,4.8vw,3.625rem);
-  line-height:1.1;letter-spacing:-.016em;margin:0 0 2rem;text-wrap:balance;
+  font-size:clamp(1.875rem,3.4vw,2.75rem);
+  line-height:1.16;letter-spacing:-.008em;margin:0 0 2rem;text-wrap:balance;
 }
 h3{font-weight:400;font-size:1.125rem;letter-spacing:-.016em;margin:0;line-height:1.4}
 p{margin:0 0 1.375rem;text-wrap:pretty}
@@ -136,7 +136,7 @@ p:last-child{margin-bottom:0}
 /* ---- clay statement: the single accent moment ---- */
 .statement{background:var(--clay);min-height:100svh;display:flex;align-items:center;padding-block:7rem;border-bottom:1px solid var(--rule)}
 @media(max-width:900px){.statement{min-height:auto;padding-block:6rem}}
-.statement p{font-family:var(--display);font-weight:400;font-size:clamp(1.875rem,4.6vw,3.25rem);line-height:1.2;letter-spacing:-.016em;max-width:19em;color:#241F1B}
+.statement p{font-family:var(--display);font-weight:400;font-size:clamp(1.625rem,3.2vw,2.5rem);line-height:1.28;letter-spacing:-.006em;max-width:19em;color:#241F1B}
 .statement .sub{font-size:1.0625rem;font-weight:400;letter-spacing:0;line-height:1.75;color:#4C4038;max-width:32em;margin-top:2.75rem}
 
 /* ---- register: rules and type only ---- */
@@ -159,7 +159,7 @@ p:last-child{margin-bottom:0}
 @media(max-width:979px){.portrait__txt{padding-block:0 5rem}.portrait{gap:3rem}}
 .portrait img{filter:saturate(.82)}
 @media(prefers-color-scheme:dark){.portrait img{filter:saturate(.75) brightness(.88)}}
-.quote{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.5rem,2.7vw,2.125rem);line-height:1.32;letter-spacing:-.012em;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
+.quote{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.375rem,2.1vw,1.75rem);line-height:1.42;letter-spacing:0;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
 
 /* ---- closing ---- */
 .close{background:var(--deep);padding-block:13rem;border-top:1px solid var(--rule)}
@@ -198,7 +198,7 @@ p:last-child{margin-bottom:0}
 .crumbs a{text-decoration:none}
 .crumbs a:hover{color:var(--ink)}
 .page-head{padding-block:5rem 0;border-bottom:1px solid var(--rule)}
-.page-head h1{font-size:clamp(2.75rem,7.4vw,6.5rem)}
+.page-head h1{font-size:clamp(2.5rem,5.6vw,4.75rem)}
 .page-head .lede{margin-top:3rem;padding-bottom:6rem}
 @media(max-width:900px){.page-head{padding-block:2.5rem 0}.page-head .lede{padding-bottom:3.5rem}}
 .prose{max-width:33em}
@@ -221,7 +221,7 @@ p:last-child{margin-bottom:0}
 .rate{border-top:1px solid var(--rule)}
 .rate__row{display:grid;gap:1rem 3rem;padding-block:3rem;border-bottom:1px solid var(--rule)}
 @media(min-width:820px){.rate__row{grid-template-columns:14rem 1fr 10rem;align-items:baseline}}
-.rate__price{font-family:var(--display);font-weight:400;font-size:2.5rem;letter-spacing:-.02em;line-height:1;margin:0}
+.rate__price{font-family:var(--display);font-weight:400;font-size:2.375rem;letter-spacing:-.005em;line-height:1;margin:0}
 .rate__price small{font-family:"DM Sans",sans-serif;font-size:.8125rem;color:var(--muted)}
 .rate__body{color:var(--muted);font-size:.9688rem;max-width:33em;margin:0}
 .rate__act a{text-decoration:none;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:.5rem}
