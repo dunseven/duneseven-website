@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Know Your Energy. We Just Plan Around It. | Dune Seven Planner</title>
+<meta name="description" content="The energy-based planner with no wearable required. You choose your energy — Flow, Focus or Low — and the plan bends around it. No sensors, no algorithms, no guilt.">
+<meta property="og:title" content="You Know Your Energy. We Just Plan Around It.">
+<meta property="og:description" content="Energy-based planning with no wearable required. You are not a data stream — choose your own day with Dune Seven Planner.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://duneseven.com.au/blog/you-know-your-energy">
+<link rel="canonical" href="https://duneseven.com.au/blog/you-know-your-energy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --clay:#D0B7AA;
+    --clay-deep:#B39685;
+    --espresso:#3A2E27;
+    --espresso-soft:#5C4F45;
+    --paper:#FBF8F5;
+    --card:#F3ECE6;
+    --line:#E4D8CE;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--espresso);
+    line-height:1.7;
+    font-size:1.0625rem;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--espresso);}
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+
+  /* Header band */
+  .band{
+    background:var(--clay);
+    padding:72px 0 64px;
+  }
+  .eyebrow{
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--espresso);
+    opacity:.65;
+    margin-bottom:20px;
+  }
+  h1{
+    font-weight:700;
+    font-size:clamp(2rem,5.5vw,3.1rem);
+    line-height:1.12;
+    letter-spacing:-.02em;
+    max-width:14ch;
+  }
+  .standfirst{
+    margin-top:22px;
+    font-size:1.15rem;
+    font-weight:400;
+    color:var(--espresso);
+    opacity:.85;
+    max-width:34ch;
+  }
+
+  /* Quote header — blog canon */
+  .lede-quote{
+    margin:56px 0 8px;
+    padding-left:22px;
+    border-left:3px solid var(--clay);
+    font-size:1.35rem;
+    font-style:italic;
+    font-weight:400;
+    line-height:1.5;
+    color:var(--espresso-soft);
+  }
+
+  article{padding:8px 0 32px;}
+  article p{margin:22px 0;}
+  article h2{
+    font-size:1.45rem;
+    font-weight:700;
+    letter-spacing:-.01em;
+    margin:52px 0 6px;
+  }
+  article strong{font-weight:700;}
+  article em{font-style:italic;}
+
+  /* Callout — blog canon */
+  .callout{
+    background:var(--card);
+    border-radius:14px;
+    padding:28px 30px;
+    margin:40px 0;
+  }
+  .callout .callout-label{
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-bottom:10px;
+  }
+  .callout p{margin:10px 0 0;}
+  .callout p:first-of-type{margin-top:0;}
+
+  /* Claims list */
+  .claims p{margin:26px 0;}
+
+  /* ——— Signature: Choose-your-day demo ——— */
+  .demo{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:34px 30px 30px;
+    margin:48px 0;
+  }
+  .demo-label{
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    margin-bottom:6px;
+  }
+  .demo-title{
+    font-size:1.25rem;
+    font-weight:700;
+    margin-bottom:22px;
+  }
+  .modes{
+    display:flex;
+    gap:10px;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+  }
+  .mode-btn{
+    font-family:inherit;
+    font-size:.95rem;
+    font-weight:500;
+    padding:11px 22px;
+    border-radius:999px;
+    border:1.5px solid var(--line);
+    background:var(--paper);
+    color:var(--espresso);
+    cursor:pointer;
+    transition:background .25s ease,border-color .25s ease,transform .15s ease;
+  }
+  .mode-btn:hover{border-color:var(--clay-deep);}
+  .mode-btn:focus-visible{outline:3px solid var(--clay-deep);outline-offset:2px;}
+  .mode-btn[aria-pressed="true"]{
+    background:var(--clay);
+    border-color:var(--clay);
+    font-weight:700;
+  }
+  .day{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+    min-height:230px;
+  }
+  .task{
+    background:var(--card);
+    border-radius:10px;
+    padding:13px 18px;
+    font-size:.98rem;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    opacity:1;
+    transition:opacity .35s ease,transform .35s ease;
+  }
+  .task .dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--clay-deep);
+    flex-shrink:0;
+  }
+  .task.priority .dot{background:var(--espresso);}
+  .task.held{
+    opacity:.32;
+    transform:scale(.985);
+  }
+  .task.hidden-task{display:none;}
+  .day-note{
+    margin-top:18px;
+    font-size:.92rem;
+    font-style:italic;
+    color:var(--espresso-soft);
+    min-height:2.6em;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .task,.mode-btn{transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* Reflection prompt — blog canon */
+  .reflection{
+    background:var(--clay);
+    border-radius:18px;
+    padding:36px 34px;
+    margin:56px 0 48px;
+  }
+  .reflection .callout-label{
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--espresso);
+    opacity:.6;
+    margin-bottom:12px;
+  }
+  .reflection p{
+    font-size:1.2rem;
+    font-style:italic;
+    line-height:1.55;
+  }
+
+  /* CTA */
+  .cta{
+    text-align:center;
+    padding:12px 0 88px;
+  }
+  .cta .cta-line{
+    font-size:1.35rem;
+    font-weight:700;
+    letter-spacing:-.01em;
+    margin-bottom:6px;
+  }
+  .cta .cta-sub{
+    color:var(--espresso-soft);
+    margin-bottom:28px;
+  }
+  .btn{
+    display:inline-block;
+    background:var(--espresso);
+    color:var(--paper);
+    text-decoration:none;
+    font-weight:700;
+    font-size:1rem;
+    padding:16px 36px;
+    border-radius:999px;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn:focus-visible{outline:3px solid var(--clay-deep);outline-offset:3px;}
+  .cta .fineprint{
+    margin-top:16px;
+    font-size:.85rem;
+    color:var(--espresso-soft);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 0 44px;
+    font-size:.85rem;
+    color:var(--espresso-soft);
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <p class="eyebrow">Dune Seven Planner · Energy, not guilt</p>
+    <h1>You know your energy. We just plan around it.</h1>
+    <p class="standfirst">The energy-based planner with no wearable required.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <blockquote class="lede-quote">
+    &ldquo;Nobody needs a sensor to tell them they&rsquo;re exhausted. You knew before your watch did.&rdquo;
+  </blockquote>
+
+  <article>
+
+    <p>There is a new promise being made in planning apps: <em>we&rsquo;ll read your energy and plan your day for you.</em></p>
+
+    <p>Here is how that promise works. You buy a wearable. You give an app your heart rate, your sleep data, your movement patterns. An algorithm decides how much energy you have. Then it rearranges your day accordingly &mdash; whether you agree with it or not.</p>
+
+    <p>We think that promise gets one thing right and everything else wrong.</p>
+
+    <h2>The part they got right</h2>
+
+    <p>Energy-first planning is correct. Your capacity is not the same at 7am as it is at 3pm. It is not the same on the day after a night shift as it is after nine hours of sleep. Any planner that treats every hour as identical is lying to you, and you feel that lie as guilt &mdash; the gap between what the plan demanded and what your body could give.</p>
+
+    <p>We built Dune Seven Planner on that truth in 2019, back when it was a paper planner and &ldquo;energy-based planning&rdquo; wasn&rsquo;t a category yet. Plan around energy, not guilt. It has been our first principle from the first page.</p>
+
+    <h2>The part they got wrong</h2>
+
+    <p><strong>You do not need a sensor to know how you feel.</strong></p>
+
+    <p>You already know. You knew the moment you woke up. If you live with ADHD, you know something the sensors don&rsquo;t: your energy doesn&rsquo;t always follow your sleep score. You can sleep nine hours and wake up foggy. You can sleep five and hit a hyperfocus streak that moves mountains. A wearable reading your heart rate cannot see that. You can.</p>
+
+    <p>So we do something radical. <strong>We ask you.</strong></p>
+
+    <p>You choose your energy. The plan bends around it. That&rsquo;s the entire mechanism &mdash; and it changes everything about whose day it is.</p>
+
+    <h2>What this means in black and white</h2>
+
+    <div class="claims">
+      <p><strong>No extra equipment.</strong> Your planner should not require a $400 device on your wrist before it works properly. Dune Seven works with what you already own: your phone and your self-knowledge.</p>
+
+      <p><strong>No biometric data leaving your phone.</strong> We never see your heart rate, your sleep, or your movement &mdash; because we never ask for it. There is nothing to harvest, nothing to leak, and nothing to sell.</p>
+
+      <p><strong>No algorithm overriding you.</strong> When an app tells you what your energy is, it has quietly decided its sensors know you better than you do. We refuse that premise completely. An app that tells you your energy is just guilt with sensors.</p>
+
+      <p><strong>Your self-knowledge, taken seriously.</strong> Choosing your own energy level is a thirty-second act of honesty each day. Over weeks, it becomes something bigger: proof that you can read yourself, trust yourself, and plan like it.</p>
+    </div>
+
+    <h2>The self-fulfilling prophecy problem</h2>
+
+    <p>There is a name for what happens when a device tells you how your day will go: a self-fulfilling prophecy.</p>
+
+    <p>Your watch says your readiness is 42%. So you brace for a bad day. You lower your effort before you&rsquo;ve tested it. You move carefully, expect less, achieve less &mdash; and by evening, the prediction has come true. Not because the sensor was right, but because you believed it before you believed yourself.</p>
+
+    <div class="callout">
+      <p class="callout-label">The truth of it</p>
+      <p>The number didn&rsquo;t describe your day. It wrote it.</p>
+      <p>Do not be led astray by data collected on your wrist. You are a human &mdash; global and holistic, not a heart rate and a sleep score. Your energy is shaped by things no sensor will ever see: what&rsquo;s on your mind, who you love, what you&rsquo;re carrying, what you&rsquo;re hoping for. <strong>No one knows you but you.</strong></p>
+    </div>
+
+    <h2>Choose your own day</h2>
+
+    <p>This is why Dune Seven gives you modes, not readings. Try it &mdash; the same day, three honest shapes:</p>
+
+    <!-- Signature interactive: the article about choosing your day lets you choose -->
+    <div class="demo">
+      <p class="demo-label">Try it here</p>
+      <p class="demo-title">One day. You choose its shape.</p>
+      <div class="modes" role="group" aria-label="Choose a mode">
+        <button class="mode-btn" data-mode="flow" aria-pressed="true">Flow</button>
+        <button class="mode-btn" data-mode="low" aria-pressed="false">Low</button>
+        <button class="mode-btn" data-mode="focus" aria-pressed="false">Focus</button>
+      </div>
+      <div class="day" id="day">
+        <div class="task priority" data-tier="1"><span class="dot"></span>Finish the client proposal</div>
+        <div class="task" data-tier="2"><span class="dot"></span>Book the dentist</div>
+        <div class="task" data-tier="2"><span class="dot"></span>30-minute walk</div>
+        <div class="task" data-tier="3"><span class="dot"></span>Reply to Sam&rsquo;s email</div>
+        <div class="task" data-tier="3"><span class="dot"></span>Sort the pantry shelf</div>
+        <div class="task" data-tier="3"><span class="dot"></span>Draft the newsletter</div>
+      </div>
+      <p class="day-note" id="dayNote">Flow &mdash; you&rsquo;re moving well, and the whole day moves with you.</p>
+    </div>
+
+    <p>You choose the mode. You choose the day. The app reflects your decision back to you &mdash; it never makes it for you. That is the entire difference between a planner that serves you and a sensor that sentences you.</p>
+
+    <h2>Who this is for</h2>
+
+    <p>This is for the shift worker whose &ldquo;morning&rdquo; starts at 6pm. The parent running on broken sleep. The ADHD brain whose energy arrives in waves no sensor can chart. The person who is tired of being told by a device how they feel.</p>
+
+    <p>You are not a data stream. You are the only person who has ever actually been inside your body. Your planner should act like it.</p>
+
+    <h2>The bottom line</h2>
+
+    <p>Energy-based planning is the future &mdash; the whole category agrees now. The only question left is who decides what your energy is: an algorithm reading your wrist, or you.</p>
+
+    <p>We made our choice in 2019. <strong>You know your energy. We just plan around it.</strong></p>
+
+    <div class="reflection">
+      <p class="callout-label">Take a breath before you go</p>
+      <p>When did you last trust your own read on your energy &mdash; and plan your day like you believed it?</p>
+    </div>
+
+  </article>
+
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <p class="cta-line">Choose your own day.</p>
+    <p class="cta-sub">Plan around energy, not guilt. No wearable required.</p>
+    <a class="btn" href="https://duneseven.com.au">Get Dune Seven Planner</a>
+    <p class="fineprint">Free on iOS and Android &middot; Pro and Lifetime options available</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Dune Seven Planner &middot; duneseven.com.au</div>
+</footer>
+
+<script>
+(function(){
+  var notes = {
+    flow: "Flow \u2014 you\u2019re moving well, and the whole day moves with you.",
+    focus: "Focus \u2014 one thing at a time. Everything else is held quietly, not lost.",
+    low: "Low \u2014 a smaller, kinder shape of the same day. Nothing deleted, nothing shamed."
+  };
+  var buttons = document.querySelectorAll('.mode-btn');
+  var tasks = document.querySelectorAll('#day .task');
+  var note = document.getElementById('dayNote');
+
+  function setMode(mode){
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false');
+    });
+    tasks.forEach(function(t){
+      var tier = parseInt(t.dataset.tier, 10);
+      t.classList.remove('held');
+      if(mode === 'focus' && tier > 1){ t.classList.add('held'); }
+      if(mode === 'low' && tier > 2){ t.classList.add('held'); }
+    });
+    note.textContent = notes[mode];
+  }
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ setMode(b.dataset.mode); });
+  });
+})();
+</script>
+
+</body>
+</html>
