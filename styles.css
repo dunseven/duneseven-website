@@ -58,6 +58,7 @@ a{color:inherit}
 
 /* ---- sections ---- */
 .sec{border-bottom:1px solid var(--rule);padding-block:11rem}
+.sec--alt{background:var(--panel)}
 @media(max-width:900px){.sec{padding-block:5rem}}
 .cols{display:grid;gap:2.5rem}
 @media(min-width:980px){
