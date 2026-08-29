@@ -64,7 +64,7 @@ a{color:inherit}
   .cols{grid-template-columns:190px 1fr;gap:6rem;align-items:start}
   .cols__label{position:sticky;top:3rem}
 }
-.label{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:400;margin:0}
+.label{font-size:.6875rem;letter-spacing:.24em;text-transform:uppercase;color:var(--clay-deep);font-weight:600;margin:0}
 
 /* ---- type ---- */
 h1{
@@ -153,8 +153,10 @@ p:last-child{margin-bottom:0}
 
 /* ---- register: rules and type, with one colour cue on what's new ---- */
 .reg{border-top:1px solid var(--rule)}
-.reg__row{display:grid;gap:.625rem 3rem;padding-block:2.5rem;border-bottom:1px solid var(--rule)}
+.reg__row{display:grid;gap:.625rem 3rem;padding-block:2.5rem;padding-left:1.5rem;border-bottom:1px solid var(--rule);border-left:2px solid transparent;transition:border-color .3s}
+.reg__row:hover{border-left-color:var(--clay-deep)}
 @media(min-width:760px){.reg__row{grid-template-columns:17rem 1fr;align-items:baseline}}
+.reg__row h3{font-weight:600;font-size:1.1875rem}
 .reg__body{color:var(--muted);font-size:.9688rem;max-width:33em;margin:0}
 .reg__new{
   margin-left:.75rem;font-size:.5625rem;letter-spacing:.16em;text-transform:uppercase;
