@@ -48,11 +48,17 @@ a{color:inherit}
 @media(max-width:640px){.wrap{padding-inline:1.5rem}}
 
 /* ---- masthead ---- */
-.mast{border-bottom:1px solid var(--rule)}
+.mast{
+  border-bottom:1px solid var(--rule);
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--paper);
+}
 .mast__in{display:flex;align-items:baseline;justify-content:space-between;padding-block:2.25rem;gap:2rem}
-.wordmark{text-decoration:none;font-weight:300;font-size:.9375rem;letter-spacing:.34em;text-transform:uppercase}
+.wordmark{text-decoration:none;font-weight:700;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase}
 .mast nav{display:none;gap:3rem;font-size:.8125rem;font-weight:400;color:var(--muted)}
-.mast nav a{text-decoration:none;transition:color .3s}
+.mast nav a{text-decoration:none;transition:color .3s;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-weight:500}
 .mast nav a:hover{color:var(--ink)}
 @media(min-width:900px){.mast nav{display:flex}}
 
@@ -240,7 +246,19 @@ p:last-child{margin-bottom:0}
 .rate{border-top:1px solid var(--rule)}
 .rate__row{display:grid;gap:1rem 3rem;padding-block:3rem;border-bottom:1px solid var(--rule)}
 @media(min-width:820px){.rate__row{grid-template-columns:14rem 1fr 10rem;align-items:baseline}}
+.rate__row--feature{
+  background:var(--panel);
+  border:1px solid var(--panel-line);
+  border-bottom:1px solid var(--panel-line);
+  border-radius:20px;
+  padding:2.75rem 2.25rem;
+  margin-block:1rem;
+  box-shadow:0 30px 60px -40px rgba(34,30,27,.22);
+}
+@media(prefers-color-scheme:dark){.rate__row--feature{box-shadow:0 30px 60px -40px rgba(0,0,0,.5)}}
+.rate__row--feature .rate__price{color:var(--clay-deep)}
 .rate__price{font-family:var(--display);font-weight:400;font-size:2.375rem;letter-spacing:-.005em;line-height:1;margin:0}
 .rate__price small{font-family:"DM Sans",sans-serif;font-size:.8125rem;color:var(--muted)}
 .rate__body{color:var(--muted);font-size:.9688rem;max-width:33em;margin:0}
 .rate__act a{text-decoration:none;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:.5rem}
+.rate__urgency{color:var(--clay-deep);font-size:.8125rem;font-weight:500;margin-top:.5rem}
