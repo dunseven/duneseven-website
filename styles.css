@@ -60,6 +60,7 @@ a{color:inherit}
 .mast nav{display:none;gap:2rem;font-size:.85rem;font-weight:400;color:var(--muted)}
 .mast nav a{text-decoration:none;transition:color .3s;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-weight:500}
 .mast nav a:hover{color:var(--ink)}
+.mast nav a[aria-current="page"]{color:var(--ink);font-weight:700}
 @media(min-width:900px){.mast nav{display:flex}}
 
 /* ---- sections ---- */
@@ -264,7 +265,7 @@ p:last-child{margin-bottom:0}
 .prose{max-width:33em}
 .prose h2{margin-top:5rem}
 .prose h2:first-child{margin-top:0}
-.prose h3{margin:3rem 0 .875rem;font-size:1.0625rem}
+.prose h3{margin:3rem 0 .875rem;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;font-weight:400}
 .prose p{color:var(--muted)}
 .prose strong{color:var(--ink);font-weight:500}
 .prose ul{padding-left:1.25rem;color:var(--muted);margin-bottom:1.5rem}
