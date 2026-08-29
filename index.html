@@ -120,6 +120,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .manifesto__cta{margin-top:2.25rem}
 .lnk--manifesto{color:#EDE7E0;border-bottom-color:var(--clay);font-size:1.0625rem}
 .lnk--manifesto:hover{opacity:1;color:var(--clay)}
+
+/* Masthead — made findable: sticky, solid background, capitalised like the site's other labels */
+.mast{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--paper,#F5F1ED);
+  border-bottom:1px solid var(--rule,#E4D8CE);
+}
+.mast .wordmark{
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:700;
+  font-size:.9rem;
+}
+.mast nav a{
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:.72rem;
+  font-weight:500;
+}
+
+/* Hero — smaller, less scroll before the first line of body copy */
+.hero{
+  padding-top:2.25rem;
+  padding-bottom:3rem;
+}
+.hero h1{
+  font-size:clamp(2rem,4.2vw,3.25rem);
+  line-height:1.15;
+}
+.hero__rule{
+  margin-top:1.5rem;
+  margin-bottom:0;
+}
 </style>
 
 </head>
