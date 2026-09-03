@@ -63,6 +63,24 @@ a{color:inherit}
 .mast nav a[aria-current="page"]{color:var(--ink);font-weight:700}
 @media(min-width:900px){.mast nav{display:flex}}
 
+/* ---- mobile menu ---- */
+.mast__menu{
+  display:inline-block;background:none;border:0;cursor:pointer;
+  color:var(--muted);font:inherit;text-transform:uppercase;
+  letter-spacing:.1em;font-size:.72rem;font-weight:500;padding:.25rem 0;
+}
+.mast__menu:hover{color:var(--ink)}
+@media(min-width:900px){.mast__menu{display:none}}
+@media(max-width:899.98px){
+  .mast nav{
+    position:absolute;left:0;right:0;top:100%;
+    background:var(--paper);border-bottom:1px solid var(--rule);
+    flex-direction:column;gap:0;padding:.5rem 1.5rem 1.5rem;
+  }
+  .mast.nav-open nav{display:flex}
+  .mast nav a{padding-block:.9rem}
+}
+
 /* ---- sections ---- */
 .sec{border-bottom:1px solid var(--rule);padding-block:11rem}
 .sec--alt{background:var(--panel)}

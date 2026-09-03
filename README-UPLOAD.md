@@ -1,17 +1,25 @@
-# Dune Seven 1.3.0 drop — 9 changed files
+# Dune Seven 1.3.0 drop v2 — 10 changed files (supersedes the first zip)
 
-Drag the CONTENTS of this folder (not the folder itself) into GitHub:
-repo → Add file → Upload files → drop everything → commit to main.
-GitHub replaces the existing files at the same paths. Netlify redeploys automatically.
+Everything from the first drop PLUS the mobile menu fix. If you already
+uploaded the first zip, upload all of this anyway — same paths, GitHub
+just replaces them.
 
-Changed:
-- index.html — hero + meta now include shift-work rosters; routines card is roster-first; "Five ways in" with the new Shift work card; nav + footer links
-- adhd-planner, mental-load, burnout-recovery, postpartum-planner — nav + footer links, Shift work added to "Also read"
-- you-know-your-energy — nav link (this page has no Built-for footer, nothing else touched)
-- pricing — Pro card and FAQ now read "repeating routines (My roster + weekdays)"; prices untouched, $69.99 confirmed
-- shift-worker-planner/index.html — REBUILT on the shared styles.css template (replaces the standalone-styled version); GTM included, FAQ structured data included
-- sitemap.xml — new page added at 0.9; you-know-your-energy added (it was missing entirely)
+Upload: extract, drag the CONTENTS into GitHub → Upload files → commit to main.
 
-After deploy: check duneseven.com.au on your phone — Shift work should appear in the nav on every page — then request indexing for /shift-worker-planner/ in Search Console.
+New in v2:
+- styles.css — mobile "Menu" button + slide-down nav panel (below 900px)
+- All 8 pages — Menu button in the masthead, tap to open/close, turns
+  into "Close" while open. The energy page has its own embedded styles,
+  so it got its own matching rules (below 640px on that page).
 
-Housekeeping (separate, whenever): the repo contains "index (1).html" through "index (6).html", "files (3).zip", preview-home-v10.html, story-section.html and a duplicate terms.html. These all deploy to the public site. Worth deleting from GitHub when you have a minute.
+Carried from v1: nav + footer Shift work links everywhere, homepage
+"Five ways in" + roster-first routines card + shift-work rosters in hero
+and meta, pricing wording, Also-read cross-links, rebuilt shift page on
+the shared template, sitemap with the new page and you-know-your-energy.
+
+After deploy, on your phone: every page should show "Menu" top right —
+tap it, the full nav drops down, Shift work included.
+
+Housekeeping (whenever): "index (1).html"–"index (6).html",
+"files (3).zip", preview-home-v10.html, story-section.html and the
+duplicate terms.html all deploy publicly — worth deleting from GitHub.
