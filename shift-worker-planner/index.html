@@ -1,135 +1,57 @@
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
-  <!-- ============================================================
-       Dune Seven — /shift-worker-planner/  (ships with v1.3.0)
-       If the repo uses shared head/nav/footer partials, replace
-       those blocks with the includes and keep the meta set below.
-       The scoped <style> block only covers this page's sections;
-       delete any rules the shared stylesheet already provides.
-       ============================================================ -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shift Worker Planner App — Rosters, FIFO Swings &amp; Night Duty | Dune Seven</title>
-  <meta name="description" content="Dune Seven is the planner app built shift-worker-first. Repeating routines that follow your roster — four on four off, FIFO swings, night duty — not the Monday-to-Friday template. Free on iOS and Android.">
-  <link rel="canonical" href="https://duneseven.com.au/shift-worker-planner/">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="author" content="Angela Kocek, Dune Seven Pty Ltd">
-  <meta name="theme-color" content="#F5F1ED">
-  <meta name="color-scheme" content="light dark">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Dune Seven Planner">
-  <meta property="og:locale" content="en_AU">
-  <meta property="og:url" content="https://duneseven.com.au/shift-worker-planner/">
-  <meta property="og:title" content="A planner for a week that doesn't start on Monday — Dune Seven">
-  <meta property="og:description" content="Built shift-worker-first. Repeating routines that follow your roster — FIFO swings, night duty, four on four off. Free on iOS and Android.">
-  <meta property="og:image" content="https://duneseven.com.au/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Dune Seven Planner shown on a phone, with Flow, Low and Focus energy modes">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="A planner for a week that doesn't start on Monday — Dune Seven">
-  <meta name="twitter:description" content="Built shift-worker-first. Repeating routines that follow your roster — FIFO swings, night duty, four on four off.">
-  <meta name="twitter:image" content="https://duneseven.com.au/og-image.jpg">
-
-  <!-- GTM: keep identical to the other pages (GTM-WHG8SCQM) -->
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is there actually a planner app for shift workers?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Shift calendar apps exist, but they only show your roster — they don't plan your life around it. Dune Seven is a full daily planner (priorities, routines, habits, journal, energy modes) where roster-pattern repeating is the primary mode, not an afterthought." }
-      },
-      {
-        "@type": "Question",
-        "name": "Does it handle FIFO swings like two weeks on, one off?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. My roster repeats on any interval from a start date, so a fourteen-on, seven-off swing is set once and carries forward indefinitely. Change rosters, change the pattern — your routines follow." }
-      },
-      {
-        "@type": "Question",
-        "name": "What about rotating day and night blocks?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Set separate routines against the same roster interval — a wind-down that lands after your night block, training that lands on days off. Each previews on the calendar so you can see where it falls before you save." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a wearable or any equipment?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. Energy in Dune Seven is chosen by you, not read off a sensor. Nothing to charge, nothing tracking you through a night shift." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this a rostering app for managers?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No — Dune Seven is a personal planner for the worker, not workforce software for the employer. It plans your life around the roster you're given." }
-      },
-      {
-        "@type": "Question",
-        "name": "What does a shift worker planner cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The core Dune Seven planner is free forever. Repeating routines is part of Pro at A$69.99 a year or A$12.99 a month, alongside the Energy Mirror, unlimited I'm Stuck and complete history — or Lifetime at a single A$129.99." }
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    /* Page-scoped styles — brand tokens per site canon.
-       Remove anything the shared stylesheet already defines. */
-    :root {
-      --bg: #F5F1ED;
-      --ink: #2B2622;
-      --ink-soft: #5C544C;
-      --clay: #B0703C;
-      --card: #FFFFFF;
-      --rule: #E3DCD4;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1C1917;
-        --ink: #EDE7E0;
-        --ink-soft: #B3A99E;
-        --clay: #C98A55;
-        --card: #262220;
-        --rule: #3A342F;
-      }
-    }
-    .swp { background: var(--bg); color: var(--ink); font-family: "DM Sans", system-ui, sans-serif; line-height: 1.6; }
-    .swp h1, .swp h2, .swp h3 { font-family: "EB Garamond", Georgia, serif; font-weight: 500; line-height: 1.15; }
-    .swp h1 { font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: -0.01em; }
-    .swp h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
-    .swp h1 em, .swp h2 em { font-style: italic; }
-    .swp-section { max-width: 68rem; margin: 0 auto; padding: 4.5rem 1.5rem; }
-    .swp-kicker { font-size: 0.95rem; color: var(--clay); margin-bottom: 0.75rem; }
-    .swp-lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 42rem; }
-    .swp-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); margin-top: 2rem; }
-    .swp-card { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 1.5rem; }
-    .swp-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-    .swp-card p { color: var(--ink-soft); font-size: 0.98rem; }
-    .swp-flag { display: inline-block; font-size: 0.78rem; color: var(--clay); border: 1px solid currentColor; border-radius: 999px; padding: 0.05rem 0.55rem; margin-left: 0.4rem; vertical-align: middle; }
-    .swp-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
-    .swp-btn { display: inline-block; padding: 0.8rem 1.5rem; border-radius: 999px; text-decoration: none; font-weight: 600; }
-    .swp-btn--primary { background: var(--ink); color: var(--bg); }
-    .swp-btn--ghost { border: 1.5px solid var(--ink); color: var(--ink); }
-    .swp-note { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.9rem; }
-    .swp-faq dt { font-weight: 600; margin-top: 1.6rem; }
-    .swp-faq dd { color: var(--ink-soft); margin: 0.4rem 0 0; }
-    .swp-rule { border: 0; border-top: 1px solid var(--rule); max-width: 68rem; margin: 0 auto; }
-    .swp-breadcrumb { font-size: 0.9rem; color: var(--ink-soft); }
-    .swp-breadcrumb a { color: inherit; }
-    .swp-story { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: center; }
-    @media (min-width: 760px) { .swp-story { grid-template-columns: 1fr 1.4fr; } }
-    .swp-story img { width: 100%; border-radius: 14px; }
-    @media (prefers-reduced-motion: reduce) { .swp * { transition: none !important; animation: none !important; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WHG8SCQM');</script>
+<!-- End Google Tag Manager -->
+<title>Shift Worker Planner App — Rosters, FIFO Swings &amp; Night Duty | Dune Seven</title>
+<meta name="description" content="A planner app built shift-worker-first. Repeating routines that follow your roster — four on four off, FIFO swings, night duty — not the Monday-to-Friday template. Free on iOS and Android.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://duneseven.com.au/shift-worker-planner/">
+<link rel="alternate" hreflang="en-au" href="https://duneseven.com.au/shift-worker-planner/">
+<link rel="alternate" hreflang="x-default" href="https://duneseven.com.au/shift-worker-planner/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dune Seven Planner">
+<meta property="og:locale" content="en_AU">
+<meta property="og:url" content="https://duneseven.com.au/shift-worker-planner/">
+<meta property="og:title" content="A planner for a week that doesn't start on Monday">
+<meta property="og:description" content="Built shift-worker-first. Repeating routines that follow your roster — FIFO swings, night duty, four on four off. Free on iOS and Android.">
+<meta property="og:image" content="https://duneseven.com.au/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A planner for a week that doesn't start on Monday">
+<meta name="twitter:description" content="Built shift-worker-first. Repeating routines that follow your roster — FIFO swings, night duty, four on four off.">
+<meta name="twitter:image" content="https://duneseven.com.au/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="/app-icon-64.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://duneseven.com.au/"},
+{"@type":"ListItem","position":2,"name":"Shift worker planner","item":"https://duneseven.com.au/shift-worker-planner/"}]},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there actually a planner app for shift workers?","acceptedAnswer":{"@type":"Answer","text":"Shift calendar apps exist, but they only show your roster — they don't plan your life around it. Dune Seven is a full daily planner (priorities, routines, habits, journal, energy modes) where roster-pattern repeating is the primary mode, not an afterthought."}},{"@type":"Question","name":"Does it handle FIFO swings like two weeks on, one off?","acceptedAnswer":{"@type":"Answer","text":"Yes. My roster repeats on any interval from a start date, so a fourteen-on, seven-off swing is set once and carries forward indefinitely. Change rosters, change the pattern — your routines follow."}},{"@type":"Question","name":"What about rotating day and night blocks?","acceptedAnswer":{"@type":"Answer","text":"Set separate routines against the same roster interval — a wind-down that lands after your night block, training that lands on days off. Each previews on the calendar so you can see where it falls before you save."}},{"@type":"Question","name":"Do I need a wearable or any equipment?","acceptedAnswer":{"@type":"Answer","text":"No. Energy in Dune Seven is chosen by you, not read off a sensor. Nothing to charge, nothing tracking you through a night shift."}},{"@type":"Question","name":"Is this a rostering app for managers?","acceptedAnswer":{"@type":"Answer","text":"No — Dune Seven is a personal planner for the worker, not workforce software for the employer. It plans your life around the roster you're given."}},{"@type":"Question","name":"What does a shift worker planner cost?","acceptedAnswer":{"@type":"Answer","text":"The core Dune Seven planner is free forever. Repeating routines is part of Pro at A$69.99 a year or A$12.99 a month, alongside the Energy Mirror, unlimited I'm Stuck and complete history — or Lifetime at a single A$129.99."}}]},
+{"@type":"MobileApplication","name":"Dune Seven Planner","operatingSystem":"iOS, Android","applicationCategory":"ProductivityApplication","url":"https://duneseven.com.au/","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD"}}
+]}</script>
 </head>
-<body class="swp">
-
-  <!-- SHARED NAV — replace with the site partial. Shift work sits before Pricing. -->
-  <header>
-    <nav aria-label="Main">
-      <a href="/">Dune Seven</a>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHG8SCQM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager -->
+<header class="mast">
+  <div class="wrap mast__in">
+    <a class="wordmark" href="/">Dune&nbsp;Seven</a>
+    <nav>
       <a href="/you-know-your-energy/">Why energy</a>
       <a href="/adhd-planner/">ADHD</a>
       <a href="/mental-load/">Mental load</a>
@@ -138,144 +60,182 @@
       <a href="/shift-worker-planner/" aria-current="page">Shift work</a>
       <a href="/pricing/">Pricing</a>
     </nav>
-  </header>
+  </div>
+</header>
+<main>
 
-  <main>
-    <section class="swp-section">
-      <p class="swp-breadcrumb"><a href="/">Home</a> › Shift work</p>
-      <h1>A planner for a week <em>that doesn't start on Monday.</em></h1>
-      <p class="swp-lede">Rotating rosters, FIFO swings, night duty, four on four off. Every planner assumes you work weekdays. Dune Seven was built by shift workers — so it doesn't.</p>
-      <div class="swp-cta-row">
-        <a class="swp-btn swp-btn--primary" href="https://apps.apple.com/app/id6755029930">Download for iOS</a>
-        <a class="swp-btn swp-btn--ghost" href="https://play.google.com/store/apps/details?id=com.duneseven.planner">Download for Android</a>
-      </div>
-      <p class="swp-note">Free tier, forever. No card required.</p>
-    </section>
+<div class="wrap crumbs"><a href="/">Home</a> &rsaquo; Shift work &amp; rosters</div>
 
-    <hr class="swp-rule">
+<section class="page-head">
+  <div class="wrap">
+    <h1 class="enter e1">A planner for a week that doesn&rsquo;t start on Monday</h1>
+    <div class="hero__rule enter e2"></div>
+    <p class="lede enter e3">Rotating rosters, FIFO swings, night duty, four on four off. Every planner assumes you work weekdays. Dune Seven was built by shift workers &mdash; so it doesn&rsquo;t.</p>
+  </div>
+</section>
 
-    <section class="swp-section">
-      <p class="swp-kicker">The problem</p>
-      <h2>Weekday planners break on a roster.</h2>
-      <p class="swp-lede">Open any planner and try to set a routine. Your options are &ldquo;daily&rdquo; or &ldquo;every Monday.&rdquo; Neither is your life.</p>
-      <p class="swp-lede">Your week is a pattern, not a template. Two day shifts, two nights, four off. Two weeks on site, one week home. Recovery days that land on a Tuesday one block and a Saturday the next. When your planner can't hold that shape, you end up rebuilding your week by hand, every single block — one more thing to carry into a job that already asks enough.</p>
-      <p class="swp-lede">Dune Seven holds the shape for you.</p>
-    </section>
+<section class="statement">
+  <div class="wrap"><p class="rise">Your week is a pattern, not a template. If your planner can&rsquo;t hold that shape, you end up rebuilding your week by hand, every single block.</p></div>
+</section>
 
-    <hr class="swp-rule">
+<section class="sec">
+  <div class="wrap cols">
+    <div class="cols__label"><p class="label">Shift worker planner</p></div>
+    <div class="prose">
+    <h2>Why weekday planners break on a roster</h2>
+    <p>Open any planner and try to set a routine. Your options are &ldquo;daily&rdquo; or &ldquo;every Monday.&rdquo; Neither is your life.</p>
+    <p>Two day shifts, two nights, four off. Two weeks on site, one week home. Recovery days that land on a Tuesday one block and a Saturday the next. When the tool can&rsquo;t hold that shape, the rebuilding falls to you &mdash; one more thing to carry into a job that already asks enough.</p>
 
-    <section class="swp-section">
-      <p class="swp-kicker">What's inside</p>
-      <h2>My roster comes first. <em>Weekdays come second.</em></h2>
-      <div class="swp-grid">
-        <div class="swp-card">
-          <h3>My roster<span class="swp-flag">New</span></h3>
-          <p>Set a routine to repeat every second day, every fourth, every eighth — any interval, from the day your block begins. Your gym sessions, your meal prep, your sleep wind-down after nights: set the pattern once and it travels with your roster, block after block. Built for FIFO swings, hospital rotations, station rosters and factory shifts, because that's what we work ourselves.</p>
+    <h2>What Dune Seven does differently</h2>
+    <h3>My roster comes first</h3>
+    <p>Set a routine to repeat every second day, every fourth, every eighth &mdash; any interval, from the day your block begins. Your training, your meal prep, your sleep wind-down after nights: set the pattern once and it travels with your roster, block after block. Built for FIFO swings, hospital rotations, station rosters and factory shifts, because that&rsquo;s what we work ourselves.</p>
+
+    <h3>Weekdays come second, one tap away</h3>
+    <p>Working Monday to Friday, or planning around a partner who does? Weekday mode holds the same routines to a weekday rhythm instead.</p>
+
+    <h3>See it before you commit</h3>
+    <p>Every routine previews on a calendar, so you can see exactly which days it lands on before you save it. No guessing whether &ldquo;every 4 days&rdquo; means what you think it means.</p>
+
+    <h3>Energy that moves like yours does</h3>
+    <p>Shift work makes a mess of the flat eight-productive-hours day every other app assumes. Dune Seven plans around the energy you actually have &mdash; <strong>Flow</strong>, <strong>Low</strong> or <strong>Focus</strong>, chosen by you. Coming off four nights? Pick Low, and the whole app quiets down around you. No wearable, no algorithm deciding for you.</p>
+
+    <div class="quote">You know your energy. We just plan around it.</div>
+
+    <h2>Who this is for</h2>
+    <ul>
+      <li>FIFO and DIDO crews planning around swings</li>
+      <li>Nurses and doctors on rotating rosters</li>
+      <li>Paramedics, police and firefighters working blocks of days and nights</li>
+      <li>Factory, warehouse and mining crews on rotation</li>
+      <li>Anyone holding a household together around a partner&rsquo;s roster</li>
+    </ul>
+    <p>And every combination of the above &mdash; because shift work collides with mental load, with postpartum, with ADHD, and a planner should hold all of it at once.</p>
+
+    <h2>Built by a firefighter, on a roster like yours</h2>
+    <p>Dune Seven&rsquo;s founder, Angela Kocek, has been a serving firefighter for more than ten years, with naval service before that. Repeating routines wasn&rsquo;t designed from a feature checklist &mdash; it was built from station rosters, night shifts and years of watching every planner on the market assume a week she&rsquo;d never worked. When we say built shift-worker-first, we mean the interval repeat came before the weekday picker.</p>
+    <p>Repeating routines is part of <a href="/pricing/">Dune Seven Pro</a>. The core planner is free, forever.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--alt">
+  <div class="wrap cols">
+    <div class="cols__label"><p class="label">What helps</p></div>
+    <div>
+      <h2 class="rise" style="margin-bottom:4rem">The features shift workers reach for first</h2>
+      <div class="reg">
+        <div class="reg__row rise">
+          <h3>My roster<span class="reg__new">New</span></h3>
+          <p class="reg__body">Routines that repeat on your interval, from your start date. Set once, carried block after block.</p>
         </div>
-        <div class="swp-card">
+        <div class="reg__row rise">
           <h3>Weekdays</h3>
-          <p>Working Monday to Friday, or a partner who does? Weekday mode sits one tap away. Same routines, held to a weekday rhythm instead.</p>
+          <p class="reg__body">The Monday-to-Friday rhythm, one tap away &mdash; for you or the household around you.</p>
         </div>
-        <div class="swp-card">
-          <h3>See it before you commit</h3>
-          <p>Every routine previews on a calendar, so you can see exactly which days it lands on before you save it. No guessing whether &ldquo;every 4 days&rdquo; means what you think it means.</p>
+        <div class="reg__row rise">
+          <h3>Calendar preview</h3>
+          <p class="reg__body">See exactly which days a routine lands on before you save it.</p>
         </div>
-        <div class="swp-card">
-          <h3>Energy that moves like yours does</h3>
-          <p>Shift work makes a mess of the flat eight-productive-hours day that every other app assumes. Dune Seven plans around the energy you actually have — Flow, Low or Focus, chosen by you. Coming off four nights? Pick Low, and the whole app quiets down around you. No wearable, no algorithm deciding for you. You know your energy. We just plan around it.</p>
+        <div class="reg__row rise">
+          <h3>Flow, Low and Focus</h3>
+          <p class="reg__body">Coming off nights is a Low day. Pick it, and the app quiets down around you.</p>
         </div>
-      </div>
-      <p class="swp-note"><a href="/pricing/">Repeating routines is part of Dune Seven Pro</a></p>
-    </section>
-
-    <hr class="swp-rule">
-
-    <section class="swp-section">
-      <p class="swp-kicker">Who it's for</p>
-      <h2>If your week has its own shape, <em>this is yours.</em></h2>
-      <p class="swp-lede">FIFO and DIDO crews planning around swings. Nurses and doctors on rotating rosters. Paramedics, police and firefighters working blocks of days and nights. Factory and warehouse crews on rotation. Anyone holding a household together around a partner's roster. And every combination of the above — because shift work collides with mental load, with postpartum, with ADHD, and a planner should hold all of it at once.</p>
-    </section>
-
-    <hr class="swp-rule">
-
-    <section class="swp-section">
-      <p class="swp-kicker">Our story</p>
-      <div class="swp-story">
-        <!-- Reuse the existing founder image asset, or drop in a station/roster image if one is shot for 1.3.0 -->
-        <img src="/angela-chloe-1024.jpg" alt="Angela Kocek, founder of Dune Seven, holding her daughter Chloe" loading="lazy">
-        <div>
-          <h2>Built by a firefighter, <em>on a roster like yours.</em></h2>
-          <p class="swp-lede">Dune Seven's founder, Angela Kocek, has been a serving firefighter for more than ten years, with naval service before that. Repeating routines wasn't designed from a feature checklist — it was built from station rosters, night shifts and the years of watching every planner on the market assume a week she'd never worked. When we say built shift-worker-first, we mean the interval repeat came before the weekday picker. We're shift workers. We think like one.</p>
+        <div class="reg__row rise">
+          <h3>Energy Mirror</h3>
+          <p class="reg__body">Your month coloured by how you actually showed up, roster and all. A mirror, not a score.</p>
+        </div>
+        <div class="reg__row rise">
+          <h3>I&rsquo;m Stuck</h3>
+          <p class="reg__body">Turns a wall of a task into three to five startable steps &mdash; useful on hour thirteen.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <hr class="swp-rule">
-
-    <section class="swp-section">
-      <p class="swp-kicker">Questions</p>
-      <h2>Shift work questions</h2>
-      <dl class="swp-faq">
-        <dt>Is there actually a planner app for shift workers?</dt>
-        <dd>Shift calendar apps exist, but they only show your roster — they don't plan your life around it. Dune Seven is a full daily planner (priorities, routines, habits, journal, energy modes) where roster-pattern repeating is the primary mode, not an afterthought.</dd>
-
-        <dt>Does it handle FIFO swings like two weeks on, one off?</dt>
-        <dd>Yes. My roster repeats on any interval from a start date, so a fourteen-on, seven-off swing is set once and carries forward indefinitely. Change rosters, change the pattern — your routines follow.</dd>
-
-        <dt>What about rotating day/night blocks?</dt>
-        <dd>Set separate routines against the same roster interval — a wind-down that lands after your night block, training that lands on days off. Each previews on the calendar so you can see where it falls before you save.</dd>
-
-        <dt>Do I need a wearable or any equipment?</dt>
-        <dd>No. Energy in Dune Seven is chosen by you, not read off a sensor. Nothing to charge, nothing tracking you through a night shift.</dd>
-
-        <dt>Is this a rostering app for managers?</dt>
-        <dd>No — Dune Seven is a personal planner for the worker, not workforce software for the employer. It plans your life around the roster you're given.</dd>
-
-        <dt>What does it cost?</dt>
-        <dd>The core planner is free forever. Repeating routines is part of Pro, alongside the Energy Mirror, unlimited I'm Stuck and your complete history — or Lifetime, once. <a href="/pricing/">See pricing</a>.</dd>
-      </dl>
-    </section>
-
-    <hr class="swp-rule">
-
-    <section class="swp-section">
-      <h2>Your roster already runs your week. <em>Let it run your routines too.</em></h2>
-      <p class="swp-lede">Clear. Helpful. Whelm-reducing. Set your pattern once — it carries you.</p>
-      <div class="swp-cta-row">
-        <a class="swp-btn swp-btn--primary" href="https://apps.apple.com/app/id6755029930">Download for iOS</a>
-        <a class="swp-btn swp-btn--ghost" href="https://play.google.com/store/apps/details?id=com.duneseven.planner">Download for Android</a>
+<section class="sec">
+  <div class="wrap cols">
+    <div class="cols__label"><p class="label">Questions</p></div>
+    <div>
+      <h2 class="rise" style="margin-bottom:4rem">Shift work questions</h2>
+      <div class="qa">
+        <details><summary>Is there actually a planner app for shift workers?</summary><p>Shift calendar apps exist, but they only show your roster &mdash; they don&rsquo;t plan your life around it. Dune Seven is a full daily planner (priorities, routines, habits, journal, energy modes) where roster-pattern repeating is the primary mode, not an afterthought.</p></details>
+        <details><summary>Does it handle FIFO swings like two weeks on, one off?</summary><p>Yes. My roster repeats on any interval from a start date, so a fourteen-on, seven-off swing is set once and carries forward indefinitely. Change rosters, change the pattern &mdash; your routines follow.</p></details>
+        <details><summary>What about rotating day/night blocks?</summary><p>Set separate routines against the same roster interval &mdash; a wind-down that lands after your night block, training that lands on days off. Each previews on the calendar so you can see where it falls before you save.</p></details>
+        <details><summary>Do I need a wearable or any equipment?</summary><p>No. Energy in Dune Seven is chosen by you, not read off a sensor. Nothing to charge, nothing tracking you through a night shift.</p></details>
+        <details><summary>Is this a rostering app for managers?</summary><p>No &mdash; Dune Seven is a personal planner for the worker, not workforce software for the employer. It plans your life around the roster you&rsquo;re given.</p></details>
+        <details><summary>What does it cost?</summary><p>The core planner is free forever. Repeating routines is part of Pro at A$69.99 a year or A$12.99 a month, alongside the Energy Mirror, unlimited I&rsquo;m Stuck and your complete history &mdash; or Lifetime, once. <a href="/pricing/">See pricing</a>.</p></details>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
 
-  <!-- SHARED FOOTER — replace with the site partial, with Shift worker planner added under Built for. -->
-  <footer>
-    <div>
-      <h4>Dune Seven</h4>
-      <p>Plan around your energy, not your guilt.<br>Dune Seven Pty Ltd · ABN 26 676 684 030</p>
-    </div>
-    <div>
-      <h4>Built for</h4>
-      <ul>
-        <li><a href="/adhd-planner/">ADHD planner</a></li>
-        <li><a href="/mental-load/">Mental load</a></li>
-        <li><a href="/burnout-recovery/">Burnout &amp; overwhelm</a></li>
-        <li><a href="/postpartum-planner/">Postpartum</a></li>
-        <li><a href="/shift-worker-planner/">Shift worker planner</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>More</h4>
-      <ul>
-        <li><a href="/pricing/">Pricing</a></li>
-        <li><a href="/privacy-policy">Privacy Policy</a></li>
-        <li><a href="/terms/">Terms of Use</a></li>
-        <li><a href="https://www.instagram.com/duneseven">Instagram</a></li>
-        <li><a href="https://www.facebook.com/duneseven">Facebook</a></li>
-      </ul>
-    </div>
-    <p>© 2026 Dune Seven Pty Ltd. All rights reserved.</p>
-  </footer>
+<section class="sec sec--alt">
+  <div class="wrap cols">
+    <div class="cols__label"><p class="label">Also read</p></div>
+    <div><div class="reg">
+      <div class="reg__row rise"><h3><a href="/adhd-planner/">ADHD &amp; executive dysfunction</a></h3><p class="reg__body">Planning paralysis, time blindness, task initiation &mdash; designed around these, not in spite of them.</p></div>
+      <div class="reg__row rise"><h3><a href="/mental-load/">Mental load</a></h3><p class="reg__body">You&rsquo;re already running the household in your head. This reduces what you have to hold.</p></div>
+      <div class="reg__row rise"><h3><a href="/postpartum-planner/">Postpartum</a></h3><p class="reg__body">Built out of a real postpartum experience. Plan for where you actually are.</p></div>
+    </div></div>
+  </div>
+</section>
 
+<section class="close">
+  <div class="wrap">
+    <h2 class="rise">Set your pattern once. It carries you.</h2>
+    <p class="lede rise">Clear. Helpful. Whelm-reducing. Free tier, forever.</p>
+    <div class="links rise">
+      <a class="lnk" href="https://apps.apple.com/app/id6755029930">Download for iOS</a>
+      <a class="lnk lnk--quiet" href="https://play.google.com/store/apps/details?id=com.duneseven.planner">Download for Android</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h4>Dune Seven</h4>
+        <p>Plan around your energy, not your guilt.<br>Dune Seven Pty Ltd &middot; ABN 26 676 684 030</p>
+      </div>
+      <div>
+        <h4>Built for</h4>
+        <ul>
+          <li><a href="/adhd-planner/">ADHD planner</a></li>
+          <li><a href="/mental-load/">Mental load</a></li>
+          <li><a href="/burnout-recovery/">Burnout &amp; overwhelm</a></li>
+          <li><a href="/postpartum-planner/">Postpartum</a></li>
+          <li><a href="/shift-worker-planner/">Shift worker planner</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Use</a></li>
+          <li><a href="https://www.instagram.com/duneseven">Instagram</a></li>
+          <li><a href="https://www.facebook.com/duneseven">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot__end">&copy; 2026 Dune Seven Pty Ltd. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  requestAnimationFrame(function(){document.body.classList.add('loaded')});
+  var els=[].slice.call(document.querySelectorAll('.rise'));
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
