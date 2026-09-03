@@ -33,6 +33,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap">
 <link rel="stylesheet" href="/styles.css">
+<style>
+/* mobile menu (self-contained so it works regardless of styles.css state) */
+.mast__menu{display:inline-block;background:none;border:0;cursor:pointer;color:var(--muted,#6b6b6b);font:inherit;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-weight:500;padding:.25rem 0}
+.mast__menu:hover{color:var(--ink,#1a1a1a)}
+@media(min-width:900px){.mast__menu{display:none}}
+@media(max-width:899.98px){
+  .mast nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:60;background:var(--paper,#FBF8F5);border-bottom:1px solid var(--rule,#E4D8CE);flex-direction:column;gap:0;padding:.5rem 1.5rem 1.5rem}
+  .mast.nav-open nav{display:flex}
+  .mast nav a{padding-block:.9rem}
+}
+</style>
 <link rel="icon" href="/app-icon-64.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
