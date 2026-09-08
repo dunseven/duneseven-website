@@ -1,3 +1,7 @@
 # Force non-www — matches the canonical tag. Fixes the split-authority issue.
 https://www.duneseven.com.au/*   https://duneseven.com.au/:splat   301!
+/user-data-deletion              /privacy-policy#delete   301
+/dune-seven-planner              /                        301
+/dune-seven-planner?blog=y       /                        301
+/ols/*                           /pricing/                301
 /privacy-policy   /privacy-policy.html   200
