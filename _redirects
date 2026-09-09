@@ -4,4 +4,5 @@ https://www.duneseven.com.au/*   https://duneseven.com.au/:splat   301!
 /dune-seven-planner              /                        301
 /dune-seven-planner?blog=y       /                        301
 /ols/*                           /pricing/                301
+/terms.html                      /terms/                  301!
 /privacy-policy   /privacy-policy.html   200
