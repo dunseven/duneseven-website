@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
 <head>
 <meta charset="utf-8">
@@ -30,21 +30,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:title" content="The ADHD planner built around executive dysfunction">
 <meta name="twitter:description" content="An ADHD planner app for planning paralysis, time blindness and task initiation. Three energy modes, a visual focus timer and task breakdown. Free on iOS and Android.">
 <meta name="twitter:image" content="https://duneseven.com.au/og-image.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
-<link rel="stylesheet" href="/styles.css">
-<style>
-/* mobile menu (self-contained so it works regardless of styles.css state) */
-.mast__menu{display:inline-block;background:none;border:0;cursor:pointer;color:var(--muted,#6b6b6b);font:inherit;text-transform:uppercase;letter-spacing:.1em;font-size:.72rem;font-weight:500;padding:.25rem 0}
-.mast__menu:hover{color:var(--ink,#1a1a1a)}
-@media(min-width:900px){.mast__menu{display:none}}
-@media(max-width:899.98px){
-  .mast nav{display:none;position:absolute;left:0;right:0;top:100%;z-index:60;background:var(--paper,#FBF8F5);border-bottom:1px solid var(--rule,#E4D8CE);flex-direction:column;gap:0;padding:.5rem 1.5rem 1.5rem}
-  .mast.nav-open nav{display:flex}
-  .mast nav a{padding-block:.9rem}
-}
-</style>
 <link rel="icon" href="/app-icon-64.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
 {"@type":"BreadcrumbList","itemListElement":[
@@ -53,205 +38,116 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need an ADHD diagnosis?","acceptedAnswer":{"@type":"Answer","text":"No. Dune Seven is designed around executive dysfunction, time blindness and mental load, and it's used by people who are diagnosed, undiagnosed, on a waitlist, or dealing with executive dysfunction from burnout or postpartum recovery. It isn't a clinical tool and doesn't diagnose anything."}},{"@type":"Question","name":"Is there a free ADHD planner option?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it's a real one. Energy modes, tasks, priorities, unlimited habits, Journal, Capture, the Focus Countdown Timer, Week and Month are all free with no trial clock and no card required."}},{"@type":"Question","name":"How is this different from a to-do list app?","acceptedAnswer":{"@type":"Answer","text":"A to-do list shows you everything all the time. Dune Seven changes what you see based on the energy you have, keeps your daily priorities to three, and gives you tools for the specific moments ADHD makes hard: starting, estimating time, and remembering the thought you just had."}},{"@type":"Question","name":"Will it nag me with notifications?","acceptedAnswer":{"@type":"Answer","text":"No. There are no streak-shaming alerts and no guilt notifications. Reminders exist where you set them and nowhere else."}},{"@type":"Question","name":"Does it work on iPhone and Android?","acceptedAnswer":{"@type":"Answer","text":"Yes, Dune Seven Planner is on the App Store and Google Play."}}]},
 {"@type":"MobileApplication","name":"Dune Seven Planner","operatingSystem":"iOS, Android","applicationCategory":"ProductivityApplication","url":"https://duneseven.com.au/","offers":{"@type":"Offer","price":"0","priceCurrency":"AUD"}}
 ]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=EB+Garamond:ital,wght@0,400;1,400&display=swap">
+<link rel="stylesheet" href="/v3.css">
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHG8SCQM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager -->
 <header class="mast">
-  <div class="wrap mast__in">
-    <a class="wordmark" href="/">Dune&nbsp;Seven</a>
-    <button class="mast__menu" type="button" aria-expanded="false" aria-controls="mainnav">Menu</button>
-    <nav id="mainnav">
-      <a href="/you-know-your-energy/">Why energy</a>
-      <a href="/adhd-planner/" aria-current="page">ADHD</a>
-      <a href="/mental-load/">Mental load</a>
-      <a href="/burnout-recovery/">Burnout</a>
-      <a href="/postpartum-planner/">Postpartum</a>
-      <a href="/shift-worker-planner/">Shift work</a>
-      <a href="/about/">About</a>
-      <a href="/pricing/">Pricing</a>
-    </nav>
+  <div class="wrap">
+    <a class="mark" href="/">DUNE SEVEN</a>
+    <nav aria-label="Main"><a href="/#why">Why energy</a><a href="/#ways" aria-current="page">Who it’s for</a><a href="/pricing/">Pricing</a><a href="/about/">About</a></nav>
   </div>
 </header>
 <main>
-
-<div class="wrap crumbs"><a href="/">Home</a> &rsaquo; ADHD &amp; executive dysfunction</div>
-
-<section class="page-head">
+<section class="hero centre">
   <div class="wrap">
-    <h1 class="enter e1">An ADHD planner that works with your brain, not against it</h1>
-    <div class="hero__rule enter e2"></div>
-    <p class="lede enter e3">Planning paralysis, time blindness, task initiation. Dune Seven was designed around these realities rather than in spite of them, by someone who lives with them.</p>
+    <h1>An ADHD planner that works with your brain, not against it.</h1>
+    <p class="lead">Planning paralysis, time blindness, task initiation. Built around them, not in spite of them, by someone who lives with them.</p>
+    <div class="btns">
+      <a class="btn btn--espresso" href="https://apps.apple.com/app/id6755029930">Download for iOS</a>
+      <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=com.duneseven.planner">Download for Android</a>
+      <p class="note">Free, forever. No card, no trial clock.</p>
+    </div>
+    <div class="phone"><img src="/shot-home-low.png" width="1206" height="2622" alt="Dune Seven Home on a Low day: Let’s simplify today, one task, and Reset my day" fetchpriority="high"></div>
   </div>
-</section>
-
-<section class="statement">
-  <div class="wrap"><p class="rise">If a planner has ever made you feel worse, it wasn't built for an ADHD brain. It was built for a brain that already had the executive function to use it.</p></div>
-</section>
-
-<section class="sec">
-  <div class="wrap cols">
-    <div class="cols__label"><p class="label">ADHD planner</p></div>
-    <div class="prose">
-    <h2>Why standard planners fail ADHD brains</h2>
-    <p>Most productivity apps are built on three quiet assumptions: that you have consistent energy, reliable working memory, and an accurate internal sense of how long things take. ADHD interrupts all three. So the app keeps working perfectly and you keep feeling like the broken part.</p>
-    <p>The result is familiar. A beautifully set-up system, abandoned by week three. A list so long that opening it triggers the exact avoidance it was meant to solve. A streak counter that turns one hard week into evidence against yourself.</p>
-
-    <h2>What Dune Seven does differently</h2>
-    <h3>Energy modes instead of one fixed view</h3>
-    <p>Every other planner gives you one home screen and expects you to meet it. Dune Seven gives you three. Choose <strong>Flow</strong> when you have capacity, <strong>Low</strong> when you don't, and <strong>Focus</strong> when you need the world narrowed to one thing. The home screen rebuilds around your choice.</p>
-    <p>Nothing is deleted or hidden when you switch to Low. Every task stays reachable in all three modes. What changes is how much you have to face at once, which is usually the actual barrier.</p>
-
-    <h3>Time blindness, made visible</h3>
-    <p>ADHD time blindness isn't laziness about the clock, it's a genuine difficulty perceiving duration. Abstract numbers don't fix it. The Focus Countdown Timer uses a depleting visual ring so time becomes something you can see draining, not a figure you have to imagine. Today at a glance does the same job across the whole day, showing your commitments as blocks so the gaps become obvious.</p>
-
-    <h3>Task initiation support, on demand</h3>
-    <p>"Book the appointment" isn't one task. It's find the number, check the calendar, decide on a day, make the call, and each of those has its own friction. Tap <strong>I'm Stuck</strong> on any task that's become a wall and it breaks into three to five steps you can actually start.</p>
-
-    <h3>Three priorities, not thirty</h3>
-    <p>A long list is a threat. Dune Seven asks a single question each morning: what matters most today? You name up to three. Everything else stays captured but out of the way.</p>
-
-    <div class="quote">Streaks are a guide, not a scorecard. Habit tracking in Dune Seven has no cap and no punishment for the week life got in the way.</div>
-
-    <h2>Who this is for</h2>
-    <ul>
-      <li>Diagnosed ADHD, inattentive, hyperactive or combined presentation</li>
-      <li>People on a waitlist, self-identifying, or still working out what's going on</li>
-      <li>Anyone with executive dysfunction from another cause &mdash; burnout, postpartum, chronic illness, shift work</li>
+</section><section class="sec">
+  <div class="wrap centre">
+    <h2>Three home screens. You choose which one today.</h2>
+    <p class="lead">Flow when you have capacity. Low when you don’t. Focus when the world needs narrowing to one thing. Nothing is deleted when you switch; there is just less asking something of you.</p>
+    <details><summary>Read on</summary><p>Most planners rest on three quiet assumptions: consistent energy, a reliable working memory and an accurate sense of how long things take. ADHD interrupts all three. So the app keeps working perfectly and you keep feeling like the broken part.</p><p>Dune Seven starts from the day you actually have. Every task stays reachable in all three modes. What changes is how much you have to face at once, which is usually the real barrier.</p></details>
+  </div>
+</section><section class="sec">
+  <div class="wrap pair pair--flip">
+    
+    <div>
+      <h2>When a task becomes a wall.</h2>
+      <p class="lead">Tap I’m Stuck and it becomes three to five steps you can actually start. On any task, on any day.</p>
+      <details><summary>Read on</summary><p>“Book the appointment” isn’t one task. It’s find the number, check the calendar, decide on a day, make the call, and each of those has its own friction. Task initiation is the wall, not the task.</p><p>I’m Stuck never judges the task or the delay. It breaks it down and hands you the first step. Three a month on Free, unlimited on Pro.</p></details>
+    </div>
+    <div class="phone"><img src="/shot-repeating-routine-task-sheet.jpg" width="900" height="1956" alt="A task sheet in Dune Seven with Mark as done, Edit, Manage repeating routine, Delete and the I’m Stuck button" loading="lazy"></div>
+  </div>
+</section><section class="sec">
+  <div class="wrap pair">
+    <div class="phone"><img src="/shot-capture-shopping.png" width="1206" height="2622" alt="The Capture screen in Dune Seven showing a shopping list: wine, milk, bread, berries" loading="lazy"></div>
+    <div>
+      <h2>Get it out of your head.</h2>
+      <p class="lead">A shopping list, notes and a journal, in the same app as your day. If you don’t see it, it isn’t there. Now you see it.</p>
+      <details><summary>Read on</summary><p>Capture is where the loose ends go so they stop circling. Shopping on one tab, notes on the other, the Journal for the rest. All of it free, with no cap.</p></details>
+    </div>
+    
+  </div>
+</section><section class="sec">
+  <div class="wrap centre">
+    <h2>Three priorities, not thirty.</h2>
+    <p class="lead">A long list is a threat. Dune Seven asks one question each morning: what matters most today? You name up to three. Everything else stays captured, out of the way.</p>
+    <details><summary>Read on</summary><p>Habits are a guide, not a scorecard. There is no streak to break and no punishment for the week life got in the way. Time blindness is met with blocks you can see, not numbers you have to imagine: Today at a glance lays the day out so the gaps become obvious, and the Focus Countdown Timer shows time draining rather than a figure to hold in your head.</p></details>
+  </div>
+</section><section class="sec centre">
+  <div class="wrap">
+    <h2>Who this is for.</h2>
+    <ul class="for">
+      <li>Diagnosed ADHD<span class="small">Inattentive, hyperactive or combined presentation.</span></li>
+      <li>Still working it out<span class="small">On a waitlist, self-identifying, or not sure yet.</span></li>
+      <li>Executive dysfunction from anywhere<span class="small">Burnout, postpartum, chronic illness, shift work.</span></li>
     </ul>
-    <p>You don't need a diagnosis to use it. Dune Seven is a planner, not a clinical tool. It doesn't diagnose anything and it never claims to.</p>
-    </div>
+    <p class="lead">You don’t need a diagnosis to use it. Dune Seven is a planner, not a clinical tool. It doesn’t diagnose anything and never claims to.</p>
   </div>
-</section>
-
-<section class="sec sec--alt">
-  <div class="wrap cols">
-    <div class="cols__label"><p class="label">What helps</p></div>
-    <div>
-      <h2 class="rise" style="margin-bottom:4rem">The features ADHD brains reach for first</h2>
-      <div class="reg">
-        <div class="reg__row rise">
-          <h3>Flow, Low and Focus</h3>
-          <p class="reg__body">Match the app to your capacity instead of the other way around. Nothing hidden, just less to face.</p>
-        </div>
-        <div class="reg__row rise">
-          <h3>Focus Countdown Timer</h3>
-          <p class="reg__body">A depleting ring that makes duration visible. The single biggest help for time blindness.</p>
-        </div>
-        <div class="reg__row rise">
-          <h3>I&rsquo;m Stuck</h3>
-          <p class="reg__body">Turns a wall of a task into three to five startable steps.</p>
-        </div>
-        <div class="reg__row rise">
-          <h3>Capture</h3>
-          <p class="reg__body">For the thought that arrives at the worst possible moment. Two taps, sorted later.</p>
-        </div>
-        <div class="reg__row rise">
-          <h3>The full Month</h3>
-          <p class="reg__body">Your energy story, gently reflected &mdash; your month coloured by how you actually showed up. A mirror, not a score.</p>
-        </div>
-        <div class="reg__row rise">
-          <h3>Reset my day</h3>
-          <p class="reg__body">One tap when today needs to start over. No commentary on what you didn&rsquo;t do.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap cols">
-    <div class="cols__label"><p class="label">Questions</p></div>
-    <div>
-      <h2 class="rise" style="margin-bottom:4rem">ADHD planner questions</h2>
-      <div class="qa">
-        <details><summary>Do I need an ADHD diagnosis?</summary><p>No. Dune Seven is designed around executive dysfunction, time blindness and mental load, and it's used by people who are diagnosed, undiagnosed, on a waitlist, or dealing with executive dysfunction from burnout or postpartum recovery. It isn't a clinical tool and doesn't diagnose anything.</p></details>
-        <details><summary>Is there a free ADHD planner option?</summary><p>Yes, and it's a real one. Energy modes, tasks, priorities, unlimited habits, Journal, Capture, the Focus Countdown Timer, Week and Month are all free with no trial clock and no card required.</p></details>
-        <details><summary>How is this different from a to-do list app?</summary><p>A to-do list shows you everything all the time. Dune Seven changes what you see based on the energy you have, keeps your daily priorities to three, and gives you tools for the specific moments ADHD makes hard: starting, estimating time, and remembering the thought you just had.</p></details>
-        <details><summary>Will it nag me with notifications?</summary><p>No. There are no streak-shaming alerts and no guilt notifications. Reminders exist where you set them and nowhere else.</p></details>
-        <details><summary>Does it work on iPhone and Android?</summary><p>Yes, Dune Seven Planner is on the App Store and Google Play.</p></details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec--alt">
-  <div class="wrap cols">
-    <div class="cols__label"><p class="label">Also read</p></div>
-    <div><div class="reg">
-      <div class="reg__row rise"><h3><a href="/mental-load/">Mental load</a></h3><p class="reg__body">You&rsquo;re already running the household in your head. This reduces what you have to hold.</p></div>
-      <div class="reg__row rise"><h3><a href="/burnout-recovery/">Burnout &amp; overwhelm</a></h3><p class="reg__body">When the to-do list itself has become the thing you can&rsquo;t face.</p></div>
-      <div class="reg__row rise"><h3><a href="/postpartum-planner/">Postpartum</a></h3><p class="reg__body">Built out of a real postpartum experience. Plan for where you actually are.</p></div>
-      <div class="reg__row rise"><h3><a href="/shift-worker-planner/">Shift work &amp; rosters</a></h3><p class="reg__body">Your week doesn&rsquo;t start on Monday. Routines that repeat with your pattern.</p></div>
-    </div></div>
-  </div>
-</section>
-
-<section class="close">
+</section><section class="band--sand review">
   <div class="wrap">
-    <h2 class="rise">Try the planner built for your actual brain</h2>
-    <p class="lede rise">Free tier, forever. Download it, use all of it, keep using it.</p>
-    <div class="links rise">
-      <a class="lnk" href="https://apps.apple.com/app/id6755029930">Download for iOS</a>
-      <a class="lnk lnk--quiet" href="https://play.google.com/store/apps/details?id=com.duneseven.planner">Download for Android</a>
+    <p class="stars" aria-label="Five stars">★★★★★</p>
+    <blockquote>“Finally I’ve found an app that is free but also targets exactly how my brain functions.”</blockquote>
+    <p class="small">App Store review, September 2026</p>
+  </div>
+</section><section class="sec centre">
+  <div class="wrap">
+    <h2>Also read.</h2>
+    <ul class="for"><li><a href="/mental-load/">Mental load<span class="small">You’re already running the household in your head. This reduces what you have to hold.</span></a></li><li><a href="/burnout-recovery/">Burnout and overwhelm<span class="small">For when the to-do list itself has become the thing you can’t face.</span></a></li><li><a href="/postpartum-planner/">Postpartum<span class="small">Built out of a real postpartum experience. Plan for where you actually are.</span></a></li><li><a href="/shift-worker-planner/">Shift work and rosters<span class="small">Your week doesn’t start on Monday. Built by shift workers, so it doesn’t here either.</span></a></li></ul>
+  </div>
+</section><section class="band--sand sec centre">
+  <div class="wrap">
+    <h2>Plan for the energy you actually have.</h2>
+    <div class="btns">
+      <a class="btn btn--espresso" href="https://apps.apple.com/app/id6755029930">Download for iOS</a>
+      <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=com.duneseven.planner">Download for Android</a>
+      <p class="note">Free, forever. No card required.</p>
     </div>
   </div>
 </section>
-
 </main>
-<footer class="foot">
+<footer>
   <div class="wrap">
-    <div class="foot__grid">
-      <div>
-        <h4>Dune Seven</h4>
-        <p>Plan around your energy, not your guilt.<br>Dune Seven Pty Ltd &middot; ABN 26 676 684 030</p>
-      </div>
-      <div>
-        <h4>Built for</h4>
-        <ul>
-          <li><a href="/adhd-planner/">ADHD planner</a></li>
-          <li><a href="/mental-load/">Mental load</a></li>
-          <li><a href="/burnout-recovery/">Burnout &amp; overwhelm</a></li>
-          <li><a href="/postpartum-planner/">Postpartum</a></li>
-          <li><a href="/shift-worker-planner/">Shift worker planner</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>More</h4>
-        <ul>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Use</a></li>
-          <li><a href="https://www.instagram.com/dune_seven_adhd_planner">Instagram</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=61559089946944">Facebook</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="foot__motto">We are human because you are.</p>
-    <p class="foot__end">&copy; 2026 Dune Seven Pty Ltd. All rights reserved.</p>
+    <a class="mark" href="/">DUNE SEVEN</a>
+    <p class="human">We are human because you are.</p>
+    <ul>
+      <li><a href="/adhd-planner/">ADHD planner</a></li>
+      <li><a href="/mental-load/">Mental load</a></li>
+      <li><a href="/burnout-recovery/">Burnout and overwhelm</a></li>
+      <li><a href="/postpartum-planner/">Postpartum</a></li>
+      <li><a href="/shift-worker-planner/">Shift worker planner</a></li>
+      <li><a href="/you-know-your-energy/">Why energy</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/privacy-policy">Privacy policy</a></li>
+      <li><a href="/terms/">Terms of use</a></li>
+      <li><a href="https://www.instagram.com/dune_seven_adhd_planner/">Instagram</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=61559089946944">Facebook</a></li>
+    </ul>
+    <p class="legal">Dune Seven Pty Ltd · ABN 26 676 684 030 · © 2026 Dune Seven Pty Ltd. All rights reserved.</p>
   </div>
 </footer>
-<script>
-(function(){
-  requestAnimationFrame(function(){document.body.classList.add('loaded')});
-  var mast=document.querySelector('.mast'),mb=document.querySelector('.mast__menu');
-  if(mast&&mb){mb.addEventListener('click',function(){
-    var open=mast.classList.toggle('nav-open');
-    mb.setAttribute('aria-expanded',open);mb.textContent=open?'Close':'Menu';
-  });}
-
-  var els=[].slice.call(document.querySelectorAll('.rise'));
-  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(function(e){e.classList.add('in')});return;
-  }
-  var io=new IntersectionObserver(function(en){
-    en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-  },{rootMargin:'0px 0px -6% 0px'});
-  els.forEach(function(e){io.observe(e)});
-})();
-</script>
 </body>
 </html>
