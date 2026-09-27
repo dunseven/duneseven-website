@@ -145,3 +145,24 @@ footer ul{list-style:none;padding:0;margin:2.5rem 0 0;display:flex;justify-conte
 footer a{text-decoration:none}
 footer a:hover{color:var(--espresso)}
 footer .legal{margin-top:2.5rem;font-size:.78rem}
+
+/* espresso lead — masthead and hero */
+.lead-espresso{background:var(--espresso);color:var(--sand)}
+.lead-espresso .mark,.lead-espresso .mast nav a[aria-current],.lead-espresso .mast nav a:hover{color:var(--sand);border-color:var(--sand)}
+.lead-espresso .mast nav a{color:#C9B8AA}
+.lead-espresso .lead,.lead-espresso .note,.lead-espresso details p{color:#C9B8AA}
+.lead-espresso summary{color:var(--sand);border-color:var(--sand)}
+.lead-espresso .btn{border-color:var(--sand)}
+.lead-espresso .btn--espresso{background:var(--sand);color:var(--espresso)}
+.lead-espresso .btn--espresso:hover{background:var(--white)}
+.lead-espresso .btn--ghost{color:var(--sand)}
+.lead-espresso .btn--ghost:hover{background:rgba(245,241,237,.1)}
+.lead-espresso .phone{box-shadow:0 40px 90px rgba(0,0,0,.45),0 4px 14px rgba(0,0,0,.25)}
+.lead-espresso .energy .flow::before{background:#F2D8CC}
+.lead-espresso .energy .low::before{background:#DDD8D2}
+.lead-espresso .energy .focus::before{background:#D0B7AA}
+.lead-espresso .hero{padding-bottom:9rem}
+
+/* espresso pivot — subpage review */
+.review--espresso{background:var(--espresso);color:var(--sand)}
+.review--espresso .stars,.review--espresso .small{color:#C9B8AA}
